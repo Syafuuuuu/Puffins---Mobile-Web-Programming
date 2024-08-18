@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--? slider Area Start-->
+<section class="slider-area slider-area2">
+    <div class="slider-active">
+        <!-- Single Slider -->
+        <div class="single-slider slider-height2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-11 col-md-12">
+                        <div class="hero__caption hero__caption2">
+                            <h1 data-animation="bounceIn" data-delay="0.2s">Leaderboard</h1>
+                            <!-- breadcrumb Start-->
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="/kuiz">kuiz</a></li>
+                                    <li class="breadcrumb-item"><a href="/kuizLeaderboard">Leaderboard</a></li>
+                                </ol>
+                            </nav>
+                            <!-- breadcrumb End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--? About Area-1 Start -->
+<section class="about-area1 fix pt-10" style="padding: 50px;">
+    <div class="support-wrapper align-items-center"
+        style="display: flex; justify-content: center; align-items: center;">
+        <div class="flex-container" style="justify-content: center; width: 100%;">
+
+            <!-- Set 2 rows for 2 types of topic -->
+            <div class="leaderboard-row">
+
+                <div class="leaderboard-column">
+                    <h1>Pemfaktoran Algebra</h1>
+                </div>
+                <br>
+                <!-- Algebra Colums -->
+                <div class="leaderboard-column">
+                    <!-- Split to 3 columns -->
+                    <div class="leaderboard-table">
+                        <h2>Senang</h2>
+                        <table>
+                            <tr>
+                                <th>Bil.</th>
+                                <th>Nama</th>
+                                <th>Skor</th>
+                            </tr>
+                            {% for record in AlgE %}
+                            <tr>
+                                <td>{{loop.index}}</td>
+                                <td>{{record.1}}</td>
+                                <td>{{record.0}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="leaderboard-table">
+                        <h2>Sederhana</h2>
+                        <table>
+                            <tr>
+                                <th>Bil.</th>
+                                <th>Nama</th>
+                                <th>Skor</th>
+                            </tr>
+                            {% for record in AlgM %}
+                            <tr>
+                                <td>{{loop.index}}</td>
+                                <td>{{record.1}}</td>
+                                <td>{{record.0}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="leaderboard-table">
+                        <h2>Susah</h2>
+                        <table>
+                            <tr>
+                                <th>Bil.</th>
+                                <th>Nama</th>
+                                <th>Skor</th>
+                            </tr>
+                            {% for record in AlgH %}
+                            <tr>
+                                <td>{{loop.index}}</td>
+                                <td>{{record.1}}</td>
+                                <td>{{record.0}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+
+                </div>
+                <br>
+
+                <div class="leaderboard-column">
+                    <h1>Pengukuran Asas</h1>
+                </div>
+                <br>
+                <!-- Standard Unit Colums -->
+                <div class="leaderboard-column">
+                    <!-- Split to 3 columns -->
+                    <div class="leaderboard-table">
+                        <h2>Senang</h2>
+                        <table>
+                            <tr>
+                                <th>Bil.</th>
+                                <th>Nama</th>
+                                <th>Skor</th>
+                            </tr>
+                            {% for record in UnitE %}
+                            <tr>
+                                <td>{{loop.index}}</td>
+                                <td>{{record.1}}</td>
+                                <td>{{record.0}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="leaderboard-table">
+                        <h2>Sederhana</h2>
+                        <table>
+                            <tr>
+                                <th>Bil.</th>
+                                <th>Nama</th>
+                                <th>Skor</th>
+                            </tr>
+                            {% for record in UnitM %}
+                            <tr>
+                                <td>{{loop.index}}</td>
+                                <td>{{record.1}}</td>
+                                <td>{{record.0}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="leaderboard-table">
+                        <h2>Susah</h2>
+                        <table>
+                            <tr>
+                                <th>Bil.</th>
+                                <th>Nama</th>
+                                <th>Skor</th>
+                            </tr>
+                            {% for record in UnitH %}
+                            <tr>
+                                <td>{{loop.index}}</td>
+                                <td>{{record.1}}</td>
+                                <td>{{record.0}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- About Area End -->
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <!--? slider Area Start-->
+        <section class="slider-area slider-area2">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider slider-height2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-11 col-md-12">
+                                <div class="hero__caption hero__caption2">
+                                    <h1 data-animation="bounceIn" data-delay="0.2s">Kuiz</h1>
+                                    <!-- breadcrumb Start-->
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a
+                                                    href="/home">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="/kuiz">kuiz</a></li>
+                                        </ol>
+                                    </nav>
+                                    <!-- breadcrumb End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--? About Area-1 Start -->
+        <section class="about-area1 fix pt-10" style="padding: 50px;">
+            <div class="support-wrapper align-items-center" style="display: flex; justify-content: center; align-items: center;">
+
+                <div class="quizcontainer">
+                    <div id="start-game">
+                        <h1>Quiz Pengukuran Asas (Sederhana)</h1>
+                        <p>Tekan butang di bawah untuk mula main!</p>
+                        <a id="start-btn" onclick="restart()">MAIN</a>
+                    </div>
+                    <div id="in-game">
+                        <div class="top-section">
+                            <h1>Pengukuran Asas</h1>
+                            <div class="game-data">
+                                <p>Soalan :
+                                    <span id="Qno">0</span>/10
+                                </p>
+                                <p>Skor: <span id="score">0</span></p>
+                            </div>
+                            <div id="timer">
+                                <div id="progress"></div>
+                            </div>
+                        </div>
+                        <div class="question-card">
+                            <h1 id="question">Ini adalah Soalan</h1>
+                        </div>
+                        <h3>Pilih jawapan yang betul: </h3>
+                        <div class="answer-card">
+                            <button class="quiz">Option A</button>
+                            <button class="quiz">Option B</button>
+                            <button class="quiz">Option C</button>
+                            <button class="quiz">Option D</button>
+                        </div>
+                    </div>
+                    <div id="end-game">
+                        <form action="{{url_for('submitScore')}}" method="POST">
+                            <h1>&#128515</h1>
+                            <h1>Skor anda adalah : <span id="final-score">0</span> / 1000</h1>
+                            <input type="hidden" id = "final-score-inp" name="final-score-inp" value="0">
+                            <p id="message"></p>
+                            <div class="form-input pt-30">
+                                <input type="submit" class="btn hero-btn" data-animation="fadeInLeft"
+                                data-delay="0.7s" name="submit" value="Hantar Skor Anda!">
+                            </div>
+                            <br>
+                            <a id="restart-btn" onclick="restart()">CUBA LAGI</a>
+                        </form>
+                    </div>
+                </div>
+            
+
+            </div>
+        </section>
+        <!-- About Area End -->
+    <script src="../static/js/quizUnitM.js"></script>
+{% endblock %}
+
+
